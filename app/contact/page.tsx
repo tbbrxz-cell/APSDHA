@@ -4,12 +4,12 @@ import SectionWrapper from "@/components/shared/SectionWrapper";
 import ContactForm from "@/components/contact/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { createPageMetadata } from "@/lib/metadata";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Globe } from "lucide-react";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Contact Us",
   description:
-    "Contact Army Public School (APS) Girls & Boys DHA for admissions, inquiries, or to schedule a campus visit in Karachi.",
+    "Contact Army Public School (APS) Girls & Boys DHA for admissions, inquiries, or to schedule a campus visit in Lahore.",
   path: "/contact",
 });
 
@@ -17,22 +17,22 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Address",
-    value: "DHA Phase, Karachi, Pakistan",
+    value: "F9RP+93V, Faisal Ghuman Rd, Askari 8 (Army Housing Scheme Defence), Lahore, Pakistan",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+92 (021) 000-0000",
+    value: "+92 42 37164886",
   },
   {
-    icon: Mail,
-    label: "Email",
-    value: "info@apsdhagb.edu.pk",
+    icon: Globe,
+    label: "Website",
+    value: "lges.edu.pk",
   },
   {
     icon: Clock,
     label: "Office Hours",
-    value: "Mon – Fri: 8:00 AM – 2:00 PM",
+    value: "Mon – Fri: 7:30 AM – 2:00 PM",
   },
 ];
 
@@ -79,18 +79,16 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8 overflow-hidden rounded-xl border border-white/10">
-                <div className="relative flex h-48 items-center justify-center bg-gradient-to-br from-army/30 via-charcoal-light to-charcoal sm:h-56">
-                  <div className="absolute inset-0 opacity-30" style={{
-                    backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(212,175,55,0.1) 20px, rgba(212,175,55,0.1) 21px), repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(212,175,55,0.1) 20px, rgba(212,175,55,0.1) 21px)",
-                  }} />
-                  <div className="relative text-center">
-                    <MapPin className="mx-auto h-8 w-8 text-gold" />
-                    <p className="mt-2 text-sm font-medium text-white">
-                      DHA Phase, Karachi
-                    </p>
-                    <p className="text-xs text-white/50">Map placeholder</p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.207585368038!2d74.38323044213033!3d31.4909774830117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391905e889d37e7d%3A0xf28b836e13310c3f!2sArmy%20Public%20School%20(Boys%20%26%20Girls)%2C%20DHA%2C%20Nishat%20Colony!5e0!3m2!1sen!2s!4v1781373116253!5m2!1sen!2s"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-xl"
+                />
               </div>
             </div>
 

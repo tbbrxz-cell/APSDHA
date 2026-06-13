@@ -1,7 +1,7 @@
-export const SITE_NAME = "Army Public School (APS) Girls & Boys DHA";
+export const SITE_NAME = "Army Public School (APS) Girls & Boys DHA, Lahore";
 export const SITE_TAGLINE = "Truth, Honor, Excellence";
 export const SITE_DESCRIPTION =
-  "Official website of Army Public School (APS) Girls & Boys DHA — committed to truth, honor, and excellence in education.";
+  "Official website of Army Public School (APS) Girls & Boys DHA, Lahore — committed to truth, honor, and excellence in education.";
 
 export const SIGNATURE_LINE =
   "Made and designed with ❤️ By Tabraiz ahmed 10 A";

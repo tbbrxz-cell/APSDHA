@@ -10,6 +10,9 @@ import {
   Phone,
   Rss,
   Share2,
+  Terminal,
+  Zap,
+  Sparkles,
 } from "lucide-react";
 import { NAV_LINKS, SIGNATURE_LINE, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -60,7 +63,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-body-muted">{SITE_TAGLINE}</p>
             <p className="text-sm leading-relaxed text-white/65">
               Nurturing leaders of tomorrow with discipline, integrity, and academic
-              excellence in the heart of DHA.
+              excellence in the heart of DHA, Lahore.
             </p>
           </div>
 
@@ -89,15 +92,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-body-muted">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <span>DHA Phase, Karachi, Pakistan</span>
+                <span>F9RP+93V, Faisal Ghuman Rd, Askari 8, Lahore</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-gold" />
-                <span>+92 (021) 000-0000</span>
+                <span>+92 42 37164886</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-gold" />
-                <span>info@apsdhagb.edu.pk</span>
+                <Globe className="h-4 w-4 shrink-0 text-gold" />
+                <span>lges.edu.pk</span>
               </li>
             </ul>
           </div>
@@ -126,7 +129,33 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/5 px-4 py-6 text-center">
+      <div className="border-t border-white/5 px-4 py-8 text-center">
+        <div className="mb-4">
+          <div className="relative inline-flex items-center gap-3 justify-center">
+            {/* Aura/glow effect */}
+            <div className="absolute inset-0 -z-10 flex items-center justify-center">
+              <div className="w-72 h-24 bg-gradient-to-r from-blue-600/30 via-purple-600/40 to-red-600/30 blur-2xl rounded-full animate-pulse" />
+              <div className="absolute w-48 h-16 bg-gradient-to-r from-red-500/20 via-purple-500/30 to-blue-500/20 blur-xl rounded-full animate-ping" style={{ animationDuration: '3s' }} />
+            </div>
+
+            {/* Japanese wind pattern bg */}
+            <div className="absolute inset-0 -z-10 opacity-10" style={{
+                backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%)'
+            }} />
+
+            {/* Icons */}
+            <Zap className="h-6 w-6 text-yellow-400 animate-pulse" />
+            <Terminal className="h-6 w-6 text-cyan-400" />
+            
+            {/* Your name */}
+            <h3 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-red-400 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+              TBARIAZ
+            </h3>
+
+            <Sparkles className="h-6 w-6 text-purple-400 animate-ping" style={{ animationDuration: '1.5s' }} />
+            <Zap className="h-6 w-6 text-red-400 animate-pulse" />
+          </div>
+        </div>
         <p className="text-xs text-gold-light/90 sm:text-sm">{SIGNATURE_LINE}</p>
       </div>
     </footer>
