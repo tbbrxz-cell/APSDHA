@@ -35,6 +35,14 @@ async function fetchArticleBySlug(slug: string): Promise<NewsEvent | null> {
 }
 
 export async function generateStaticParams() {
+  const hasSupabaseVars =
+    process.env.NEXT_PUBLIC_SUPABASE_URL &&
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!hasSupabaseVars) {
+    return [];
+  }
+
   try {
     const { data } = await supabase.from("news_and_events").select("slug");
     return data?.map(({ slug }) => ({ slug })) ?? [];

@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/metadata";
-import { supabase } from "@/lib/supabase";
 
 const staticRoutes: Array<{
   path: string;
@@ -27,25 +26,41 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  let newsEntries: MetadataRoute.Sitemap = [];
+  // Only try to fetch news if we have valid Supabase env vars
+  const hasSupabaseVars =
+    process.env.NEXT_PUBLIC_SUPABASE_URL &&
+    process.env.NEXT_PUBLIC_SUPABASE_URL.length > 0 &&
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY &&
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY.length > 0;
 
-  try {
-    const { data, error } = await supabase
-      .from("news_and_events")
-      .select("slug, created_at, date")
-      .order("date", { ascending: false });
+  if (hasSupabaseVars) {
+    try {
+      // Use dynamic import only when needed
+      const { createClient } = await import("@supabase/supabase-js");
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      );
 
-    if (!error && data) {
-      newsEntries = data.map((article) => ({
-        url: `${SITE_URL}/news-events/${article.slug}`,
-        lastModified: new Date(article.created_at ?? article.date),
-        changeFrequency: "weekly" as const,
-        priority: 0.7,
-      }));
+      const { data, error } = await supabase
+        .from("news_and_events")
+        .select("slug, created_at, date")
+        .order("date", { ascending: false });
+
+      if (!error && data) {
+        const newsEntries = data.map((article) => ({
+          url: `${SITE_URL}/news-events/${article.slug}`,
+          lastModified: new Date(article.created_at ?? article.date),
+          changeFrequency: "weekly" as const,
+          priority: 0.7,
+        }));
+        return [...staticEntries, ...newsEntries];
+      }
+    } catch (err) {
+      console.error("Failed to fetch news slugs for sitemap:", err);
     }
-  } catch (err) {
-    console.error("Failed to fetch news slugs for sitemap:", err);
   }
 
-  return [...staticEntries, ...newsEntries];
+  // Default: return only static entries
+  return staticEntries;
 }
