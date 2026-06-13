@@ -41,7 +41,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex">
           {NAV_LINKS.map((link) => {
             const isActive =
               link.href === "/"
@@ -53,7 +53,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                    "rounded-lg px-2.5 py-2 text-xs sm:text-sm font-medium transition-colors",
                     isActive
                       ? "bg-army/60 text-gold"
                       : "text-white/70 hover:bg-white/5 hover:text-white"

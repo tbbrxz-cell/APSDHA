@@ -61,7 +61,7 @@ export default function Hero() {
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/10 px-4 py-1.5 shadow-glow-gold-sm">
             <span className="h-2 w-2 animate-pulse rounded-full bg-gold-light" />
             <span className="text-xs font-medium uppercase tracking-widest text-gold-light">
-              Official Website — DHA Karachi
+              Official Website — DHA Lahore
             </span>
           </div>
 

@@ -41,7 +41,7 @@ export default function AboutPage() {
               <div className="mt-6 space-y-4 text-sm leading-relaxed text-white/70 sm:text-base">
                 <p>
                   {SITE_NAME} has been a cornerstone of quality education in
-                  Defence Housing Authority, Karachi. Rooted in military
+                  Defence Housing Authority, Lahore. Rooted in military
                   traditions of discipline and integrity, our school provides a
                   nurturing environment where every child is encouraged to reach
                   their full potential.
