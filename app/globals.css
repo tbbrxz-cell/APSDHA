@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-charcoal text-white antialiased leading-relaxed;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply leading-tight tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .section-y {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .text-body-muted {
+    @apply text-white/70;
+  }
+
+  .text-caption {
+    @apply text-sm text-white/70;
+  }
+
+  .card-interactive {
+    @apply transition-all duration-300 ease-out;
+    @apply hover:-translate-y-1.5 hover:border-gold/30 hover:shadow-glow-gold;
+  }
+
+  .btn-interactive {
+    @apply transition-all duration-200 ease-out;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-white/10 bg-charcoal/70 backdrop-blur-xl;
+  }
+
+  .crest-stroke {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    animation: crest-draw 2.4s ease-in-out infinite alternate;
+  }
+
+  @keyframes crest-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-12px) translateX(6px);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-float-slower {
+    animation: float-slow 12s ease-in-out infinite reverse;
+  }
+}
