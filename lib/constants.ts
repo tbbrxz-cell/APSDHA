@@ -14,5 +14,6 @@ export const NAV_LINKS = [
   { href: "/academics", label: "Academics" },
   { href: "/admissions", label: "Admissions" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/gen-z-lounge", label: "Gen Z Lounge" },
   { href: "/contact", label: "Contact" },
 ] as const;
