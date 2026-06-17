@@ -56,10 +56,10 @@ export default function FeaturesSection() {
     <SectionWrapper className="section-y">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center sm:mb-12">
-          <p className="text-sm font-medium uppercase tracking-widest text-gold-light">
+          <p className="text-sm font-medium uppercase tracking-widest text-purple-300">
             Why APS DHA
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
             Why Choose APS DHA
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-caption sm:text-base">
@@ -71,12 +71,12 @@ export default function FeaturesSection() {
         <StaggerGrid className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {features.map((feature) => (
             <StaggerItem key={feature.title}>
-              <Card className="card-interactive h-full border-white/10 bg-charcoal-light/60">
+              <Card className="card-interactive h-full">
                 <CardContent className="p-6 sm:p-7">
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-army/50">
-                    <feature.icon className="h-5 w-5 text-gold-light" />
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-purple-500/20">
+                    <feature.icon className="h-5 w-5 text-purple-300" />
                   </div>
-                  <h3 className="font-semibold text-white">{feature.title}</h3>
+                  <h3 className="font-semibold">{feature.title}</h3>
                   <p className="mt-2 text-sm text-body-muted">
                     {feature.description}
                   </p>

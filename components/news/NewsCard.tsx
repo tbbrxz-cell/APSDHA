@@ -25,13 +25,13 @@ export default function NewsCard({
     >
       <Card
         className={cn(
-          "h-full overflow-hidden border-white/10 card-interactive",
-          featured && "border-gold/20 bg-gradient-to-b from-army/20 to-charcoal-light"
+          "h-full overflow-hidden border-white/7 bg-white/[0.015] backdrop-blur-xl card-interactive",
+          featured && "border-purple-500/20 shadow-[0_0_30px_rgba(147,51,234,0.1)]"
         )}
       >
         <div
           className={cn(
-            "relative overflow-hidden bg-army/20",
+            "relative overflow-hidden bg-purple-500/5",
             featured ? "aspect-[16/9]" : "aspect-video"
           )}
         >
@@ -48,15 +48,14 @@ export default function NewsCard({
               }
             />
           ) : (
-            <div className="flex h-full items-center justify-center bg-gradient-to-br from-army/30 to-charcoal">
-              <Newspaper className="h-12 w-12 text-white/20" />
+            <div className="flex h-full items-center justify-center bg-gradient-to-br from-purple-500/10 to-transparent">
+              <Newspaper className="h-12 w-12 text-white/10" />
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
           {featured && (
             <Badge
-              variant="gold"
-              className="absolute left-4 top-4 border-gold/40 bg-charcoal/80 backdrop-blur-sm"
+              className="absolute left-4 top-4 border-purple-500/40 bg-black/80 backdrop-blur-sm text-purple-300"
             >
               Featured
             </Badge>
@@ -64,7 +63,7 @@ export default function NewsCard({
         </div>
 
         <CardContent className={cn("p-5", featured && "sm:p-6")}>
-          <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-gold">
+          <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-purple-400">
             <Calendar className="h-3.5 w-3.5" />
             <time dateTime={article.date}>
               {format(new Date(article.date), "MMMM d, yyyy")}
@@ -73,7 +72,7 @@ export default function NewsCard({
 
           <h3
             className={cn(
-              "mt-3 font-semibold leading-snug text-white transition-colors group-hover:text-gold",
+              "mt-3 font-semibold leading-snug text-white transition-colors group-hover:text-purple-300 font-syne",
               featured ? "text-xl sm:text-2xl" : "text-base sm:text-lg"
             )}
           >
@@ -82,14 +81,14 @@ export default function NewsCard({
 
           <p
             className={cn(
-              "mt-2 text-white/60",
+              "mt-2 text-zinc-500 font-inter",
               featured ? "line-clamp-3 text-sm sm:text-base" : "line-clamp-3 text-sm"
             )}
           >
             {article.description}
           </p>
 
-          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold">
+          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-purple-400 group-hover:text-purple-300 transition-colors">
             Read more
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>

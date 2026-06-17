@@ -66,20 +66,20 @@ export default function AcademicsPage() {
       <SectionWrapper className="py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-gold">
+            <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
               Curriculum
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-2 text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl font-syne">
               Curriculum Overview
             </h2>
-            <p className="mt-3 text-sm text-white/60 sm:text-base">
+            <p className="mt-4 text-base text-zinc-500 sm:text-lg leading-relaxed font-inter">
               APS DHA follows the national curriculum framework aligned with
               Federal Board standards, enriched with co-curricular programs,
               character education, and 21st-century skills development.
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               "English, Urdu, Mathematics, and Science at all levels",
               "Islamiyat, Pakistan Studies, and Social Studies",
@@ -90,35 +90,35 @@ export default function AcademicsPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-xl border border-white/10 bg-charcoal-light/60 p-4"
+                className="flex items-start gap-3 bento-card p-5"
               >
-                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold" />
-                <p className="text-sm text-white/80">{item}</p>
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-500/50" />
+                <p className="text-sm text-zinc-400 font-inter">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="border-y border-white/5 bg-charcoal-light/30 py-12 sm:py-16">
+      <SectionWrapper className="border-y border-white/5 bg-[#030305]/30 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center">
-            <p className="text-sm font-medium uppercase tracking-widest text-gold">
+          <div className="mb-12 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
               Grade Levels
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-2 text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl font-syne">
               Learning Pathways
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {gradeLevels.map((grade) => (
-              <Card key={grade.level} className="border-white/10">
+              <Card key={grade.level} className="bento-card border-white/5">
                 <CardHeader>
-                  <CardTitle className="text-gold">{grade.level}</CardTitle>
+                  <CardTitle className="text-purple-300 font-syne tracking-tight text-xl">{grade.level}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <p className="text-sm text-white/70">{grade.description}</p>
+                  <p className="text-sm text-zinc-500 font-inter leading-relaxed">{grade.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -128,11 +128,11 @@ export default function AcademicsPage() {
 
       <SectionWrapper className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center">
-            <p className="text-sm font-medium uppercase tracking-widest text-gold">
+          <div className="mb-12 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
               Campus
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-2 text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl font-syne">
               Facilities
             </h2>
           </div>
@@ -141,14 +141,14 @@ export default function AcademicsPage() {
             {facilities.map((facility) => (
               <Card
                 key={facility.name}
-                className="border-white/10 transition-transform hover:-translate-y-1"
+                className="bento-card border-white/5 group"
               >
-                <CardContent className="p-5">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-army/50">
-                    <facility.icon className="h-5 w-5 text-gold" />
+                <CardContent className="p-6">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors">
+                    <facility.icon className="h-5 w-5 text-purple-400" />
                   </div>
-                  <h3 className="font-semibold text-white">{facility.name}</h3>
-                  <p className="mt-1 text-xs text-white/60 sm:text-sm">
+                  <h3 className="font-semibold text-white font-syne tracking-tight">{facility.name}</h3>
+                  <p className="mt-2 text-xs text-zinc-500 sm:text-sm font-inter leading-relaxed">
                     {facility.detail}
                   </p>
                 </CardContent>

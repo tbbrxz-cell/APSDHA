@@ -128,16 +128,26 @@ export default function Footer() {
 
       <div className="border-t border-white/5 px-4 py-8 text-center">
         <div className="mb-4">
-          <div className="relative inline-flex items-center justify-center">
-            {/* Minimal aura effect */}
-            <div className="absolute -inset-2 bg-gold/15 blur-xl rounded-full" />
-            {/* Your name */}
-            <h3 className="text-xl sm:text-2xl font-bold text-gold relative z-10">
-              TABRAIZ
-            </h3>
+          <div className="relative inline-flex flex-col items-center justify-center gap-2">
+            {/* Glowing visual container */}
+            <div className="relative inline-flex items-center justify-center">
+              <div className="absolute -inset-2 bg-purple-500/20 blur-xl rounded-full" />
+              <p className="text-sm sm:text-base text-gray-300 relative z-10 tracking-tight lowercase">
+                site coded by tabraiz (10 a) ──&gt; absolute cinema 🎬🔥 [bro cooked with this layout]
+              </p>
+            </div>
+            {/* Flashing neon badge */}
+            <div className="relative inline-flex items-center gap-2">
+              <span className="text-xs sm:text-sm text-gray-400 tracking-tight lowercase">
+                aura:
+              </span>
+              <span className="text-sm sm:text-base font-bold text-purple-400 animate-pulse tracking-tight" style={{ filter: "drop-shadow(0 0 10px rgba(168,85,247,0.6))" }}>
+                +999,999,999,999
+              </span>
+            </div>
           </div>
         </div>
-        <p className="text-xs text-gold-light/90 sm:text-sm">{SIGNATURE_LINE}</p>
+        <p className="text-xs text-gray-500 sm:text-sm">{SIGNATURE_LINE}</p>
       </div>
     </footer>
   );

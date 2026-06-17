@@ -33,10 +33,10 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-army text-sm font-bold text-gold transition-colors group-hover:bg-army-light">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-500/20 text-sm font-bold text-purple-300 transition-colors group-hover:bg-purple-500/30">
             APS
           </span>
-          <span className="hidden max-w-[200px] text-sm font-semibold leading-tight text-white sm:block lg:max-w-none lg:text-base">
+          <span className="hidden max-w-[200px] text-sm font-semibold leading-tight sm:block lg:max-w-none lg:text-base">
             {SITE_NAME}
           </span>
         </Link>
@@ -55,8 +55,8 @@ export default function Navbar() {
                   className={cn(
                     "rounded-lg px-2.5 py-2 text-xs sm:text-sm font-medium transition-colors",
                     isActive
-                      ? "bg-army/60 text-gold"
-                      : "text-white/70 hover:bg-white/5 hover:text-white"
+                      ? "bg-purple-500/20 text-purple-300"
+                      : "text-gray-400 hover:bg-white/5 hover:text-white"
                   )}
                 >
                   {link.label}
@@ -71,7 +71,7 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Open menu"
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white/80 transition-colors hover:border-gold/30 hover:text-gold"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-gray-400 transition-colors hover:border-purple-500/30 hover:text-purple-300"
             >
               <Menu className="h-5 w-5" />
             </button>
@@ -82,12 +82,12 @@ export default function Navbar() {
             <Drawer.Content className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex max-h-[85vh] flex-col rounded-t-2xl border border-white/10 bg-charcoal-light outline-none pb-[env(safe-area-inset-bottom)]">
               <div className="mx-auto mt-3 h-1.5 w-12 shrink-0 rounded-full bg-white/20" />
               <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-                <span className="text-sm font-semibold text-gold">Menu</span>
+                <span className="text-sm font-semibold text-purple-300">Menu</span>
                 <Drawer.Close asChild>
                   <button
                     type="button"
                     aria-label="Close menu"
-                    className="flex h-9 w-9 items-center justify-center rounded-lg text-white/60 hover:text-gold"
+                    className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-400 hover:text-purple-300"
                   >
                     <X className="h-5 w-5" />
                   </button>
@@ -107,8 +107,8 @@ export default function Navbar() {
                         className={cn(
                           "mb-1 flex rounded-xl px-4 py-3 text-base font-medium transition-colors",
                           isActive
-                            ? "bg-army/50 text-gold"
-                            : "text-white/80 hover:bg-white/5"
+                            ? "bg-purple-500/20 text-purple-300"
+                            : "text-gray-400 hover:bg-white/5"
                         )}
                       >
                         {link.label}
